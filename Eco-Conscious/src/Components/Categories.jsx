@@ -1,11 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Styles/Categories.css";
-import box1 from "../assets/box1.png";
-import box2 from "../assets/box2.png";
-import box3 from "../assets/box3.png";
-import box4 from "../assets/box4.png";
-import box5 from "../assets/box5.png";
+import box1 from "../assets/12.png";
+import box2 from "../assets/4.png";
+import box3 from "../assets/3.png";
+import box4 from "../assets/2.png";
+import box5 from "../assets/4s.png";
 
 const Categories = () => {
   const navigate = useNavigate();
