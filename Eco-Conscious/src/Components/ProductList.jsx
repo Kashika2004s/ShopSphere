@@ -23,7 +23,6 @@ const ProductList = () => {
   const normalizedCategory = categoryMapping[category.toLowerCase()] || category;
 
   useEffect(() => {
-    // Reset filter, sort, and search when the category changes
     setFilter("");
     setSortOption("");
     setSearchTerm("");
@@ -32,7 +31,7 @@ const ProductList = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("https://eco-conscious-8oac.onrender.com/api/products", {
+      .get("http://localhost:3000/api/products", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -90,7 +89,7 @@ const ProductList = () => {
 
     return filtered;
   };
-                                                                
+
   const sortProducts = (products) => {
     if (sortOption === "price_low_high") {
       return products.sort((a, b) => a.price - b.price);
@@ -132,7 +131,7 @@ const ProductList = () => {
     <div style={styles.outerContainer}>
       <SecondaryNavbar
         currentCategory={normalizedCategory}
-        sortOption={sortOption} // Pass sortOption to SecondaryNavbar
+        sortOption={sortOption}
         onSortSelect={(value) => setSortOption(value)}
         onFilterSelect={(value) => setFilter(value)}
       />
@@ -147,7 +146,11 @@ const ProductList = () => {
                 key={product._id}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <div style={styles.productCard}>
+                <div
+                  style={styles.productCard}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                >
                   <img
                     src={product.image}
                     alt={product.name}
@@ -155,18 +158,9 @@ const ProductList = () => {
                   />
                   <h3 style={styles.productBrand}>{product.brand}</h3>
                   <p style={styles.productName}>{product.name}</p>
-                  <div style={styles.rating}>
-                    {product.rating} ★★★★★ | {product.reviews} reviews
-                  </div>
-                  <div style={styles.price}>
-                    <span>$ {product.price}</span>
-                  </div>
-                  {/* Add filter tag below the price */}
-                  {filter && (
-                    <div style={styles.filterTag}>
-                      {getFilterTag(product)}
-                    </div>
-                  )}
+                  <div style={styles.rating}>{product.rating} ★★★★★ | {product.reviews} reviews</div>
+                  <div style={styles.price}><span>$ {product.price}</span></div>
+                  {filter && <div style={styles.filterTag}>{getFilterTag(product)}</div>}
                 </div>
               </Link>
             ))
@@ -177,9 +171,11 @@ const ProductList = () => {
   );
 };
 
+
+
 const styles = {
   outerContainer: {
-    backgroundColor: "#f9f9f9",
+    background: "linear-gradient(135deg,rgb(241 230 234),rgb(227, 238, 247))",
   },
   app: {
     fontFamily: "Arial, sans-serif",
@@ -196,20 +192,36 @@ const styles = {
   },
   productCard: {
     backgroundColor: "#fff",
-    border: "1px solid #ddd",
+    border: "2px solid #d0cce4",
+
     overflow: "hidden",
     textAlign: "center",
     padding: "30px",
-    height: "300px", // Increased to accommodate the new tag
-    transition: "box-shadow 0.3s ease",
-    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    height: "300px", 
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
     paddingBottom: "40px",
+    borderRadius: "16px",
+    cursor: "pointer",
+    animation: "fadeIn 0.6s ease-in-out",
+  },
+  productCardHover: {
+    transform: "scale(1.05)",
+    boxShadow: "0 16px 32px rgba(0,0,0,0.2)",
+  },
+  '@keyframes fadeIn': {
+    '0%': { opacity: 0, transform: 'translateY(20px)' },
+    '100%': { opacity: 1, transform: 'translateY(0)' },
   },
   productImage: {
     width: "100%",
     height: "200px",
     objectFit: "contain",
-    borderRadius: "8px",
+    borderRadius: "12px",
+    transition: "transform 0.3s ease",
+  },
+  productImageHover: {
+    transform: "scale(1.08)",
   },
   productBrand: {
     fontSize: "16px",
@@ -230,15 +242,18 @@ const styles = {
   price: {
     fontSize: "16px",
     fontWeight: "bold",
-    color: "#777",
+    color: "grey",
   },
   filterTag: {
-    // marginTop: "10px",
     fontSize: "14px",
-    padding:'10px',
+    padding: '10px',
     fontStyle: "italic",
     color: "#00796b",
+    backgroundColor: "rgba(0,121,107,0.1)",
+    borderRadius: "8px",
+    display: "inline-block",
   },
 };
 
 export default ProductList;
+

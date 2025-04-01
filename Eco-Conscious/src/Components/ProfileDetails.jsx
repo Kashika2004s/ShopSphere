@@ -17,7 +17,7 @@ const ProfileDetails = () => {
       }
 
       try {
-        const response = await fetch("https://eco-conscious-8oac.onrender.com/api/profile", {
+        const response = await fetch("http://localhost:3000/api/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -39,7 +39,7 @@ const ProfileDetails = () => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch("https://eco-conscious-8oac.onrender.com/api/delete", {
+      const response = await fetch("http://localhost:3000/api/delete", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -123,7 +123,7 @@ const ProfileDetails = () => {
     button: {
       width: "40%",
       padding: "15px",
-      backgroundColor: "#007F4E",
+      backgroundColor: "rgb(127, 147, 223)",
       color: "white",
       border: "none",
       fontSize: "16px",
