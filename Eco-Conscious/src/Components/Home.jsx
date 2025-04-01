@@ -16,8 +16,8 @@ const Home = () => {
       <Slider />
       <TopPicks />
       <Categories />
-      <MotoSection />
-      <BestProducts />
+      {/* <MotoSection /> */}
+      {/* <BestProducts /> */}
       <CustomerTestimonials />
     </div>
   );
