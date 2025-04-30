@@ -54,7 +54,7 @@ app.use("/uploads", express.static("uploads"));
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to the Eco-Conscious API");
+  res.send("Welcome to the AAPP");
 });
 app.use("/signup", signupRouter);
 app.use("/login", loginRouter);

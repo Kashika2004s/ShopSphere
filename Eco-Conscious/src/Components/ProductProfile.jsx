@@ -294,7 +294,7 @@ const ProductProfile = () => {
           </p>
           <p style={{ margin: "0", padding: "0", fontSize: "18px" }}>
             <strong>Product Type:</strong> {product.category}
-          </p>
+          </p>``
 
           {/* Quantity and Action Buttons */}
           <div
