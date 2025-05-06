@@ -19,7 +19,7 @@ const SearchResults = () => {
         const token = localStorage.getItem("token");
 
         const response = await axios.get(
-          `https://eco-conscious-8oac.onrender.com/api/search/${term}`,
+          `http://localhost:3000/api/search/${term}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

@@ -118,7 +118,7 @@ const styles = {
     width:"200px",
     marginTop: '10px',
     padding: '10px 20px',
-    backgroundColor: '#007f4e',
+    backgroundColor: '#48A6A7',
     color: 'white',
     border: 'none',
     borderRadius: '5px',

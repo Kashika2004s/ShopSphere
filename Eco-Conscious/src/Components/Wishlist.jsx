@@ -25,7 +25,8 @@ const styles = {
     height: "340px",
     padding: "20px",
     border: "1px solid #e0e0e0",
-    boxShadow: "2px 4px 8px #b9fbc0",
+    boxShadow: "2px 4px 8px #8E7DBE",
+    borderRadius: "15px",
     transition: "transform 0.2s",
     textAlign: "center",
     position: "relative",
@@ -58,7 +59,7 @@ const styles = {
     right: "20px",
     fontSize: "25px",
     cursor: "pointer",
-    color: "#007F4E",
+    color: "#8E7DBE",
     transition: "color 0.3s ease",
   },
   addButton: {
@@ -75,7 +76,7 @@ const styles = {
     transition: "all 0.3s ease",
   },
   addButtonHover: {
-    backgroundColor: "#007f4e",
+    backgroundColor: "#8E7DBE",
     color: "white",
     transform: "translate(-50%, -55%)",
     border: "none",

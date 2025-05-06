@@ -262,7 +262,7 @@ const Cart = () => {
                   onClick={() => handleRemoveItem(item.productId)}
                   style={{
                     padding: "10px",
-                    backgroundColor: "#e63946",
+                    backgroundColor: "#48A6A7",
                     color: "#fff",
                     border: "none",
                     cursor: "pointer",

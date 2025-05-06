@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import EnvironmentCriteria from "./EnvironmentCriteria";
-import Alternative from "./Alternative";
+//import Alternative from "./Alternative";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Footer from "./Footer";
 
@@ -208,7 +208,7 @@ const ProductProfile = () => {
         <div
           style={{
             flex: 1, // Ensures the image div gets equal height
-            minWidth: "280px",
+            minWidth: "750px",
             marginTop: "10px",
             display: "flex",
             justifyContent: "center", // Center the image inside the div
@@ -294,7 +294,7 @@ const ProductProfile = () => {
           </p>
           <p style={{ margin: "0", padding: "0", fontSize: "18px" }}>
             <strong>Product Type:</strong> {product.category}
-          </p>``
+          </p>
 
           {/* Quantity and Action Buttons */}
           <div
@@ -346,7 +346,7 @@ const ProductProfile = () => {
                   color: isInCart
                     ? "#088F8F"
                     : hoveredIcon === "cart"
-                    ? "#088F8F"
+                    ? "purple"
                     : "#ccc",
                   transition: "color 0.3s ease",
                 }}
@@ -373,7 +373,7 @@ const ProductProfile = () => {
               <i
                 className="fas fa-heart"
                 style={{
-                  margin: "0px 20px 0px 0px",
+                  margin: "0px 10px 0px 0px",
                   fontSize: "24px",
                   cursor: "pointer",
                   color: isInWishlist
@@ -399,7 +399,7 @@ const ProductProfile = () => {
           >
             <button
               style={{
-                padding: "16px 25px",
+                padding: "15px 20px",
                 backgroundColor: "#000",
                 color: "#fff",
                 cursor: "pointer",
@@ -429,19 +429,7 @@ const ProductProfile = () => {
             marginTop: "150px",
           }}
         >
-          <EnvironmentCriteria
-            ecoScore={product.ecoScore}
-            details={{
-              carbonFootprint: product.carbonFootprint,
-              materialSourcing: product.materialSourcing,
-              recyclability: product.recyclability,
-              waterUsage: product.waterUsage,
-              energyEfficiency: product.energyEfficiency,
-              biodegradability: product.biodegradability,
-              durability: product.durability,
-            }}
-          />
-          <Alternative productId={product._id} category={product.category} />
+        
         </div>
       </div>
     </>

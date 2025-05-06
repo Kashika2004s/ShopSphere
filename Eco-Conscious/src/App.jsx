@@ -20,8 +20,8 @@ import Cart from "./Components/Cart";
 import Order from "./Components/Order";
 import OrderHistory from "./Components/OrderHistory";
 import SearchResults from "./Components/SearchResults";
-import Alternative from "./Components/Alternative";
-import Bestproduct from "./Components/Bestproduct";
+//import Alternative from "./Components/Alternative";
+//import Bestproduct from "./Components/Bestproduct";
 import LearnMore from "./Components/LearnMore";
 
 // Define the API base URL based on the environment
@@ -72,10 +72,8 @@ function App() {
           path="/cart"
           element={isAuthenticated ? <Cart /> : <Navigate to="/" />}
         />
-        <Route path="/bestproduct" element={<Bestproduct />} />
         <Route path="/order/:orderId" element={<Order />} />
         <Route path="/search/:term" element={<SearchResults />} />
-        <Route path="/alternatives/:category/:id" element={<Alternative />} />
         <Route
           path="/order-history"
           element={isAuthenticated ? <OrderHistory /> : <Navigate to="/" />}

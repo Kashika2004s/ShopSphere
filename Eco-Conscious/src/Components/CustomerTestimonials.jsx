@@ -5,17 +5,17 @@ const testimonials = [
   {
     name: "Sneha",
     location: "Delhi, India",
-    text: "The eco-friendly fashion options are fantastic. I love how stylish and sustainable they are!",
+    text: "The search and filtering functionality is smooth and efficient, enhancing the overall shopping experience for eco-conscious users.",
   },
   {
     name: "Kamaljeet Kaur",
     location: "Punjab, India",
-    text: "Excellent quality and great for the planet. The zero-waste packaging is a big plus!",
+    text: "ShopSphere offers a clean and intuitive user interface that makes it easy for customers to explore sustainable products seamlessly.",
   },
   {
     name: "Kanchan Yadav",
     location: "Uttar Pradesh, India",
-    text: "A wonderful store with a commitment to sustainability. Highly recommend their products!",
+    text: "Incorporating more customer reviews and product certifications could further boost user trust and product credibility.",
   },
 ];
 
@@ -27,7 +27,7 @@ const CustomerTestimonials = () => {
         {testimonials.map((testimonial, index) => (
           <div key={index} style={styles.testimonialCard}>
             <div style={styles.profileIcon}>
-              <FaUserCircle size={80} color="#4caf50" />
+              <FaUserCircle size={80} color="#9ACBD0" />
             </div>
             <div style={styles.textContainer}>
               <p style={styles.text}>{`"${testimonial.text}"`}</p>
