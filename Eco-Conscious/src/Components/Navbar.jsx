@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/OIP.jpeg";
+import logo from "../assets/OIP-removebg-preview.png";
 import { FaRegUser, FaRegHeart, FaSearch } from "react-icons/fa";
 import { FiShoppingBag } from "react-icons/fi";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";

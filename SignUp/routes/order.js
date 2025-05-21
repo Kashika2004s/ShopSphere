@@ -70,7 +70,7 @@ router.post("/place-order", authenticateToken, async (req, res) => {
 
     // Email content
     const mailOptions = {
-      from: `"EcoConscious" <${process.env.EMAIL}>`, // Sender's email
+      from: `"ShopSphere" <${process.env.EMAIL}>`, // Sender's email
       to: user.email, // Recipient's email
       subject: "Order Confirmation",
       html: `
@@ -158,7 +158,7 @@ router.post("/buy-now", authenticateToken, async (req, res) => {
 
     // Email content
     const mailOptions = {
-      from: `"EcoConscious" <${process.env.EMAIL}>`, // Sender's email
+      from: `"ShopSphere" <${process.env.EMAIL}>`, // Sender's email
       to: user.email, // Recipient's email
       subject: "Order Confirmation",
       html: `

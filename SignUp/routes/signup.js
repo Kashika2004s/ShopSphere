@@ -51,7 +51,7 @@ router.post('/', validateSignup, hashPassword, async (req, res) => {
     // Send the verification email
     const verificationUrl = `${process.env.FRONTEND_URL}/verify?token=${verificationToken}`;
     await transporter.sendMail({
-      from: `"EcoConsious" <${process.env.EMAIL}>`,
+      from: `"ShopSphere" <${process.env.EMAIL}>`,
       to: email,
       subject: 'Verify your email',
       html:`<p>Hi ${fullname},</p>
@@ -60,7 +60,7 @@ router.post('/', validateSignup, hashPassword, async (req, res) => {
             <a href="${verificationUrl}">Verify Email</a>,
             <p>If you didn't sign up, please ignore this email.</p>
             <p>Thanks,</p>
-            <p>The EcoConsious Team</p>
+            <p>The ShopSphere Team</p>
           `,
     });
 
