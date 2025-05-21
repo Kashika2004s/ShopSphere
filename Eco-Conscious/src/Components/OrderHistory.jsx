@@ -139,7 +139,7 @@ const FeedbackForm = ({ orderId, onSubmit }) => {
     formData.append('photo', photo); // photo should be the File object
 
     try {
-      const response = await fetch('https://eco-conscious-8oac.onrender.com/api/feedback', {
+      const response = await fetch('http://localhost:3000/api/feedback', {
         method: 'POST',
         body: formData,
       });
@@ -189,7 +189,7 @@ const OrderHistory = () => {
   useEffect(() => {
     const fetchOrderHistory = async () => {
       try {
-        const response = await fetch('https://eco-conscious-8oac.onrender.com/api/order-history', {
+        const response = await fetch('http://localhost:3000/api/order-history', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -49,7 +49,7 @@ router.post('/', validateSignup, hashPassword, async (req, res) => {
     const verificationToken = jwt.sign({ email }, JWT_SECRET, { expiresIn: '1d' });
 
     // Send the verification email
-    const verificationUrl = `${process.env.REACT_APP_BACKEND_URL}/verify?token=${verificationToken}`;
+    const verificationUrl = `${process.env.FRONTEND_URL}/verify?token=${verificationToken}`;
     await transporter.sendMail({
       from: `"EcoConsious" <${process.env.EMAIL}>`,
       to: email,

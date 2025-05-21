@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user'); // Adjust path based on your project structure
+const User = require('../models/user'); 
 const dotenv = require('dotenv');
 dotenv.config();
 

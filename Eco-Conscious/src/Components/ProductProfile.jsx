@@ -22,7 +22,7 @@ const ProductProfile = () => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `https://eco-conscious-8oac.onrender.com/api/products/${id}`,
+          `http://localhost:3000/api/products/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -44,7 +44,7 @@ const ProductProfile = () => {
     };
     const checkWishlist = async () => {
       try {
-        const response = await fetch("https://eco-conscious-8oac.onrender.com/api/wishlist", {
+        const response = await fetch("http://localhost:3000/api/wishlist", {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ const ProductProfile = () => {
       return;
     }
     try {
-      const response = await fetch("https://eco-conscious-8oac.onrender.com/api/wishlist/add", {
+      const response = await fetch("http://localhost:3000/api/wishlist/add", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -122,7 +122,7 @@ const ProductProfile = () => {
     }
 
     try {
-      const response = await fetch("https://eco-conscious-8oac.onrender.com/api/order/buy-now", {
+      const response = await fetch("http://localhost:3000/api/order/buy-now", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -156,7 +156,7 @@ const ProductProfile = () => {
       return;
     }
     try {
-      const response = await fetch("https://eco-conscious-8oac.onrender.com/api/cart/add", {
+      const response = await fetch("http://localhost:3000/api/cart/add", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
