@@ -23,7 +23,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch("https://eco-conscious-8oac.onrender.com/api/cart", {
+        const response = await fetch("http://localhost:3000/api/cart", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -60,7 +60,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await fetch('https://eco-conscious-8oac.onrender.com/api/cart/update', {
+      const response = await fetch('http://localhost:3000/api/cart/update', {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -90,7 +90,7 @@ const Cart = () => {
   const handleRemoveItem = async (productId) => {
     try {
       const response = await fetch(
-        `https://eco-conscious-8oac.onrender.com/api/cart/remove/${productId}`,
+        `http://localhost:3000/api/cart/remove/${productId}`,
         {
           method: "DELETE",
           headers: {
@@ -114,7 +114,7 @@ const Cart = () => {
   const handleCheckout = async () => {
     try {
       const response = await fetch(
-        "https://eco-conscious-8oac.onrender.com/api/order/place-order",
+        "http://localhost:3000/api/order/place-order",
         {
           method: "POST",
           headers: {

@@ -16,7 +16,7 @@ const TopPicks = () => {
     const fetchTopPicks = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("https://eco-conscious-8oac.onrender.com/api/products", {
+        const response = await axios.get("http://localhost:3000/api/products", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
